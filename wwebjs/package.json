@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "ffmpeg": "^0.0.4",
+    "mime-types": "^2.1.34",
+    "mysql2": "^2.3.3",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.15.6"
+  }
+}
