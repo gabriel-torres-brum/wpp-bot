@@ -1,0 +1,18 @@
+{
+  "name": "botnovo",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "ts-node-dev main.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@open-wa/wa-automate": "^4.31.7",
+    "ts-node": "^10.6.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.2"
+  }
+}

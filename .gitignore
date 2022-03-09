@@ -1,0 +1,6 @@
+bot/node_modules/
+bot/_IGNORE_session/
+bot/session.data.json
+bot/yarn.lock
+backend/node_modules/
+backend/yarn.lock
