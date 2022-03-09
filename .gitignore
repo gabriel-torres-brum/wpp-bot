@@ -4,3 +4,9 @@ bot/session.data.json
 bot/yarn.lock
 backend/node_modules/
 backend/yarn.lock
+
+# managed
+**.data.json
+**.node-persist**
+**_IGNORE_**
+# end managed

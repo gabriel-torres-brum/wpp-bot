@@ -1,4 +1,4 @@
-import sendInstalmentsMessage from "../Message/SendIntalmentsMessage";
+import sendInstalmentsMessage from "./SendMessage/sendInstalments";
 
 const thenSearchInstalments = async (infos: any) => {
   const { chatInfos, resSearchInstalments, client, step } = infos;
@@ -16,6 +16,10 @@ const thenSearchInstalments = async (infos: any) => {
       } else {
         // Se for sucesso, mostra os tipos de parcelamento disponíveis para a oferta.
         const instalments = resSearchInstalments.instalments;
+        await client.sendText(
+          chatInfos.id,
+          "*Em quantas parcelas deseja pagar esse acordo ?*"
+        );
         for (let i = 0; i < instalments.length; i++) {
           await sendInstalmentsMessage(infos, instalments[i]);
         }
@@ -30,6 +34,10 @@ const thenSearchInstalments = async (infos: any) => {
         );
       } else {
         // Se for sucesso, mostra 
+        await client.sendText(
+          chatInfos.id,
+          "Qual a melhor data de vencimento do seu boleto?"
+        );
         const instalments = resSearchInstalments.instalments;
         await sendInstalmentsMessage(infos, instalments[infos.instalmentId]);
       }

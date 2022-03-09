@@ -1,5 +1,5 @@
 import { Client } from "@open-wa/wa-automate";
-import sendOffersMessage from "../Message/SendOffersMessage";
+import sendOffersMessage from "./SendMessage/sendOffers";
 
 const thenSearchOffers = async (
   msgInfos: any,
