@@ -35,7 +35,7 @@ async function stepOneFunction(client: Client, info: ChatInfo) {
 						'*Valor a vista:* ' +
 						`R$ ${offer.atSight} (economize ${offer.discountPercentage}%)\n` +
 						`*Ou em até* ${offer.maxInstalments} *parcelas de* R$ ${offer.maxInstalmentValue}`;
-					let button = [ { id: offer.id, text: 'Selecionar' } ];
+					let button = [ { id: offer.id, text: 'Ver oferta' } ];
 					await client.sendButtons(chatId, text, button, '');
 				}
 			} else {

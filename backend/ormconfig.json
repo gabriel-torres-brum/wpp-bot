@@ -4,7 +4,7 @@
    "port": 3306,
    "username": "root",
    "password": "root#mysql@2022",
-   "database": "carol_bot",
+   "database": "carol_cobranca",
    "synchronize": true,
    "logging": false,
    "entities": [

@@ -1,9 +1,11 @@
 import { create, Client, Message, MessageId, ChatId } from '@open-wa/wa-automate';
 
 import { FindChatResponse, ManageChat } from './services/ManageChatService';
+
+import stepZeroFunction from './functions/Step0Function';
 import stepOneFunction from './functions/Step1Function';
 import stepTwoFunction from './functions/Step2Function';
-import stepZeroFunction from './functions/Step0Function';
+import stepThreeFunction from './functions/Step3Function';
 
 export type ChatInfo = {
 	chatId: ChatId;
@@ -15,9 +17,9 @@ export type ChatInfo = {
 	type: string;
 };
 
-function start(client: Client) {
+async function start(client: Client) {
 	client.onMessage(async (message: Message) => {
-		const { findChat } = new ManageChat();
+		const { findChat, updateChat } = new ManageChat();
 		const chatId = message.chatId;
 		const chatFound = await findChat({ chatId });
 
@@ -34,13 +36,19 @@ function start(client: Client) {
 		switch (chatFound.step) {
 			case undefined:
 			case 0:
-				stepZeroFunction(client, info);
+				await stepZeroFunction(client, info);
 				break;
 			case 1:
-				stepOneFunction(client, info);
+				await stepOneFunction(client, info);
 				break;
 			case 2:
-				stepTwoFunction(client, info);
+				await stepTwoFunction(client, info);
+				break;
+			case 3:
+				await stepThreeFunction(client, info);
+				break;
+			case 4:
+				await client.reply(chatId, 'Proxima rotina...', info.messageId);
 				break;
 		}
 	});

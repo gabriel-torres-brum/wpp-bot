@@ -10,7 +10,8 @@
     "@open-wa/wa-automate": "^4.32.0",
     "dotenv": "^16.0.0",
     "js-brasil": "^2.5.1",
-    "ts-node": "^10.6.0"
+    "moment": "^2.29.1",
+    "ts-node": "^10.7.0"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",

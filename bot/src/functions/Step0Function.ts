@@ -23,7 +23,7 @@ async function stepZeroFunction(client: Client, info: ChatInfo) {
 		}
 	} else {
 		await updateChat({ chatId, step });
-		text = `Olá, *${nome.split(' ')[0]}* 🤗\nMeu nome é *Carol*, sou sua atendente virtual.`;
+		text = `Olá, *${nome.split(' ')[0]}* 🤗`;
 		await client.sendText(chatId, text);
 		/* Fazer rotina que pesquisa o CPF existente na base de dados */
 		text = `Por favor, digite seu CPF para que eu consulte se temos alguma oferta disponível no sistema para você.`;
